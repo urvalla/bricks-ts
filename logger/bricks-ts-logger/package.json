@@ -1,8 +1,12 @@
 {
   "name": "bricks-ts-logger",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Bricks TS: common logger",
-  "main": "main.ts",
+  "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "files": [
+    "lib"
+  ],
   "dependencies": {},
   "devDependencies": {
     "typescript": "^4.4.3"
@@ -12,5 +16,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
