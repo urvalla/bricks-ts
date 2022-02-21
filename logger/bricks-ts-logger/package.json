@@ -4,8 +4,11 @@
   "description": "Bricks TS: common logger",
   "main": "main.ts",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

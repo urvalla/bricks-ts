@@ -2,6 +2,7 @@ export interface IBricksLoggerOpts {
   app?: string,
   node?: string,
   module?: string,
+  event?: string,
   requestId?: string,
   traceId?: string,
   data?: any,
@@ -19,7 +20,7 @@ export interface IBricksLogger {
 /**
  * Loggers default opt proxy
  */
-export class IBricksLoggerDefaultsProxy {
+export class BricksLoggerDefaultsProxy implements IBricksLogger {
   readonly logger: IBricksLogger;
   readonly opts: IBricksLoggerOpts;
 
@@ -74,7 +75,7 @@ export class IBricksLoggerDefaultsProxy {
 /**
  * Multiple loggers proxy
  */
-export class IBricksLoggerMultiProxy {
+export class BricksLoggerMultiProxy implements IBricksLogger {
   readonly loggers: Array<IBricksLogger>;
 
   constructor(...loggers: Array<IBricksLogger>) {
@@ -103,5 +104,34 @@ export class IBricksLoggerMultiProxy {
 
   trace(message: string, opts?: IBricksLoggerOpts): void {
     this.loggers.forEach(logger => logger.trace(message, opts));
+  }
+}
+
+/**
+ * Simple console logger
+ */
+export class BricksLoggerConsole implements IBricksLogger {
+  fatal(message: string, opts?: IBricksLoggerOpts): void {
+    console.error(message, opts || undefined);
+  }
+
+  error(message: string, opts?: IBricksLoggerOpts): void {
+    console.error(message, opts || undefined);
+  }
+
+  warn(message: string, opts?: IBricksLoggerOpts): void {
+    console.warn(message, opts || undefined);
+  }
+
+  info(message: string, opts?: IBricksLoggerOpts): void {
+    console.info(message, opts || undefined);
+  }
+
+  debug(message: string, opts?: IBricksLoggerOpts): void {
+    console.debug(message, opts || undefined);
+  }
+
+  trace(message: string, opts?: IBricksLoggerOpts): void {
+    console.trace(message, opts || undefined);
   }
 }
