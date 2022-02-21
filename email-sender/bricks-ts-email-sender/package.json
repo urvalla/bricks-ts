@@ -1,0 +1,13 @@
+{
+  "name": "rapid-bricks-ts-email-sender",
+  "version": "0.1.0",
+  "description": "Rapid Bricks TS: common classes and interfaces for email sender adapters / services",
+  "main": "main.ts",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

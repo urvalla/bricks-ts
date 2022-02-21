@@ -1,0 +1,13 @@
+{
+  "name": "bricks-ts-logger",
+  "version": "0.1.0",
+  "description": "Bricks TS: common logger",
+  "main": "main.ts",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
