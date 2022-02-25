@@ -135,3 +135,38 @@ export class BricksLoggerConsole implements IBricksLogger {
     console.trace(message, opts || undefined);
   }
 }
+
+
+export type ILoggerLevels = 'fatal' | 'error' | 'warn' | 'info' | 'debug' | 'trace';
+
+/**
+ * Logger with abstract call.
+ * Can be used when call have a single point.
+ */
+export abstract class ProtoLogger implements IBricksLogger {
+  fatal(message: string, opts?: IBricksLoggerOpts): void {
+    return this.call('fatal', message, opts);
+  }
+
+  error(message: string, opts?: IBricksLoggerOpts): void {
+    return this.call('error', message, opts);
+  }
+
+  warn(message: string, opts?: IBricksLoggerOpts): void {
+    return this.call('warn', message, opts);
+  }
+
+  info(message: string, opts?: IBricksLoggerOpts): void {
+    return this.call('info', message, opts);
+  }
+
+  debug(message: string, opts?: IBricksLoggerOpts): void {
+    return this.call('debug', message, opts);
+  }
+
+  trace(message: string, opts?: IBricksLoggerOpts): void {
+    return this.call('trace', message, opts);
+  }
+
+  abstract call(level: ILoggerLevels, message: string, opts?: IBricksLoggerOpts): void;
+}
